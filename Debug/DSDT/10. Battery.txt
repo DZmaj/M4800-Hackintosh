@@ -1,0 +1,60 @@
+#Maintained by: DuongTH
+into_all device label BAT1 remove_entry;
+into_all device label BAT2 remove_entry;
+into_all method label _PCL remove_entry;
+
+
+into device label AC parent_label _SB insert
+begin
+Method (_PCL, 0, NotSerialized)  // _PCL: Power Consumer List \n
+            {
+                Return (Package (0x02)\n
+                {\n
+                    _SB, \n
+                    BAT0, \n
+                })\n
+            }\n
+end;
+
+into_all method label BTEV remove_entry;
+into_all method label CBAT remove_entry;
+into definitionblock code_regex . insert
+begin
+Scope (_SB)\n
+{\n
+Method (BTEV, 2, NotSerialized)\n
+        {\n
+            If (LEqual (Arg0, One))\n
+            {\n
+                If (LEqual (Arg1, Zero))\n
+                {\n
+                    Notify (BAT0, 0x81)\n
+                }\n
+            }\n
+
+            If (LEqual (Arg0, 0x02))\n
+            {\n
+                If (LEqual (Arg1, Zero))\n
+                {\n
+                    Notify (BAT0, 0x80)\n
+                    Notify (BAT0, 0x81)\n
+                }\n
+            }\n
+
+            If (LEqual (Arg0, 0x03))\n
+            {\n
+                If (LEqual (Arg1, Zero))\n
+                {\n
+                    Notify (BAT0, 0x80)\n
+                }\n
+            }\n
+        }\n
+
+Method (CBAT, 2, NotSerialized)\n
+            {\n
+                Notify (BAT0, 0x81)\n
+                Store (ECG5 (), Local0)\n
+                And (Local0, 0x2B, APRE)\n
+            }\n
+}\n
+end;

@@ -1,0 +1,26 @@
+
+#Maintained by: RehabMan for: Laptop Patches
+#fix_PARSEOP_ZERO.txt
+
+# credit toleda: http://www.tonymacx86.com/dsdt/89727-maciasl-patch-repository-thread.html#post574047
+
+into device label PCI0 code_regex (\s+Zero){2,} removeall_matched;
+
+# if you need something more agressive...
+#into_all all code_regex (\s+Zero){2,} removeall_matched;
+#into device label PCI0 code_regex (\s+Zero){2,} removeall_matched;
+
+#Maintained by: RehabMan for: Laptop Patches
+#fix_ADBG.txt
+
+into method label ADBG replace_content begin Return(0) end;
+
+
+#Maintained by: RehabMan for: Laptop Patches
+#fix_HID_pnp.txt
+
+# To fix Name(_HID, "*pnpXXXX") and Name(_HID, "pnpXXXX")
+
+into_all all code_regex (Name\s+\(_HID,\s+\")\*pnp(.*\") replaceall_matched begin %1PNP%2 end;
+into_all all code_regex (Name\s+\(_HID,\s+\")pnp(.*\") replaceall_matched begin %1PNP%2 end; 
+

@@ -1,0 +1,52 @@
+#Maintained by: RehabMan for: Laptop Patches
+#graphics_Rename-PEGP.txt
+
+# Note: Most DSDT/SSDTs use PEGP for the integrated graphics device,
+#  but there are few renegades that use VID or AGP1.
+#  If your DSDT uses VID or AGP1 instead of PEGP, see the 
+#  alternate patch "Rename VID/AGP1 to GFX0"
+
+# sometimes there is already GFX0 used for other things
+into_all all code_regex GFX0, replaceall_matched begin IGFX, end;
+
+# rename PEGP -> GFX0 for better power management
+into_all all code_regex PEGP\. replaceall_matched begin GFX0. end;
+into_all all code_regex \.PEGP replaceall_matched begin .GFX0 end;
+into_all all code_regex \sPEGP, replaceall_matched begin GFX0, end;
+into_all all code_regex \(PEGP replaceall_matched begin (GFX0 end;
+into_all all label PEGP set_label begin GFX0 end;
+into_all all label _SB.PCI0.PEGP set_label begin _SB.PCI0.GFX0 end;
+into_all all label \_SB.PCI0.PEGP set_label begin \_SB.PCI0.GFX0 end;
+into_all all label _SB.PCI0.PEGP.DD02 set_label begin _SB.PCI0.GFX0.DD02 end;
+into_all all label \_SB.PCI0.PEGP.DD02 set_label begin \_SB.PCI0.GFX0.DD02 end;
+into_all all label ^^^PEGP set_label begin ^^^GFX0 end;
+into_all all label ^^PEGP set_label begin ^^GFX0 end;
+into_all all label ^PEGP set_label begin ^GFX0 end;
+
+#Maintained by: RehabMan for: Laptop Patches
+#graphics_Rename-PEG0.txt
+
+# Note: Most DSDT/SSDTs use PEG0 for the integrated graphics device,
+#  but there are few renegades that use VID or AGP1.
+#  If your DSDT uses VID or AGP1 instead of PEG0, see the 
+#  alternate patch "Rename VID/AGP1 to PEGP"
+
+# sometimes there is already PEGP used for other things
+into_all all code_regex PEGP, replaceall_matched begin IGFX, end;
+
+# rename PEG0 -> PEGP for better power management
+into_all all code_regex PEG0\. replaceall_matched begin PEGP. end;
+into_all all code_regex \.PEG0 replaceall_matched begin .PEGP end;
+into_all all code_regex \sPEG0, replaceall_matched begin PEGP, end;
+into_all all code_regex \(PEG0 replaceall_matched begin (PEGP end;
+into_all all label PEG0 set_label begin PEGP end;
+into_all all label _SB.PCI0.PEG0 set_label begin _SB.PCI0.PEGP end;
+into_all all label \_SB.PCI0.PEG0 set_label begin \_SB.PCI0.PEGP end;
+into_all all label _SB.PCI0.PEG0.DD02 set_label begin _SB.PCI0.PEGP.DD02 end;
+into_all all label \_SB.PCI0.PEG0.DD02 set_label begin \_SB.PCI0.PEGP.DD02 end;
+into_all all label ^^^PEG0 set_label begin ^^^PEGP end;
+into_all all label ^^PEG0 set_label begin ^^PEGP end;
+into_all all label ^PEG0 set_label begin ^PEGP end;
+
+
+into_all all label _SB.PCI0.PEG0.PEGP set_label begin _SB.PCI0.PEGP.GFX0 end;

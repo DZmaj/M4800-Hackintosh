@@ -1,0 +1,6 @@
+into method label _INI parent_label PEGP insert
+begin
+External(\_SB.PCI0.PEGP.GFX0._OFF, MethodObj)
+                \_SB.PCI0.PEGP.GFX0._OFF()
+// disable nvida
+end;
