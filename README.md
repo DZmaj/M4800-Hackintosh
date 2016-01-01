@@ -4,8 +4,11 @@ Document For hackintosh on Dell  Precision M4800
 
 Hardware:
 Dell Precision M4800 
+
 CPU: i7 4810QM 
+
 Chipset: intel QM87 
+
 RAM: 2x8GB RAM
 IGPU: Intel HD 4600 ✔︎ 
 DGPU: nVidai Quadro K1100M 2GB DDR5 - read more on next line
