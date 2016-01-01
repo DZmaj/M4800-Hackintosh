@@ -4,16 +4,13 @@ Document For hackintosh on Dell  Precision M4800
 
 Hardware:
 Dell Precision M4800 
-
 CPU: i7 4810QM 
-
 Chipset: intel QM87 
-
 RAM: 2x8GB RAM
-IGPU: Intel HD 4600 ✔︎ 
+IGPU: Intel HD 4600 ✔︎
 DGPU: nVidai Quadro K1100M 2GB DDR5 - read more on next line
 Display: 1920x1080 IPS - eDP port
-Sound: RealTek ALC 292 ✔︎ thankso
+Sound: RealTek ALC 292 ✔︎thank for Jake Lo - OSX latitude
 WLAN: Replace origin intelWifi with BCM943225 ✔︎
 Ethernet: Intel I217-LM ✔︎
 TouchPad: ALPS touchpad ✔︎
