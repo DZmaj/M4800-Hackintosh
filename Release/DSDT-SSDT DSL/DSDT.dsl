@@ -4631,13 +4631,24 @@ DefinitionBlock ("DSDT.aml", "DSDT", 2, "DELL  ", "CBX3   ", 0x00000014)
                 Name (RPAV, Zero)
                 
 
-                Device (PXSX)
+                Device (SDXC)
                 {
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
                         Return (GPRW (0x09, 0x04))
                     }
+                    Method (_DSM, 4, NotSerialized)
+                    {
+                        If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                        Return (Package()
+                        {
+                            "compatible", Buffer() { "pci14e4,16bc" },
+                            "name", Buffer() { "pci14e4,16bc" },
+                            "IOName", "pci14e4,16bc",
+                        })
+                    }
+                    Name(_RMV, 0)
                 }
 
                 Method (_REG, 2, NotSerialized)  // _REG: Region Availability
@@ -4682,7 +4693,7 @@ DefinitionBlock ("DSDT.aml", "DSDT", 2, "DELL  ", "CBX3   ", 0x00000014)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (SDXC, 0x02)
                     }
                 }
 
