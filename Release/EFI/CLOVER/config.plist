@@ -21,13 +21,13 @@
 				<key>Signature</key>
 				<string>SSDT</string>
 				<key>TableId</key>
-				<string>CpuPm</string>
+				<string>Cpu0Ist</string>
 			</dict>
 			<dict>
 				<key>Signature</key>
 				<string>SSDT</string>
 				<key>TableId</key>
-				<string>Cpu0Ist</string>
+				<string>CpuPm</string>
 			</dict>
 			<dict>
 				<key>Signature</key>
@@ -98,7 +98,7 @@
 			<key>Legacy</key>
 			<false/>
 			<key>Tool</key>
-			<true/>
+			<false/>
 		</dict>
 		<key>Theme</key>
 		<string>bootcamp</string>
@@ -139,28 +139,72 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>Still waiting for root 2</string>
+				<string>Fix Bluetooth 30 seconds commandWakeup</string>
 				<key>Find</key>
 				<data>
-				dA5IjT2lkAAA
+				AAAAD4UHAQAA
 				</data>
 				<key>Name</key>
-				<string>IOAHCIBlockStorage</string>
+				<string>IOBluetoothHostControllerUSBTransport</string>
 				<key>Replace</key>
 				<data>
-				v8gAAACQkJCQ
+				AAAAD4QHAQAA
 				</data>
 			</dict>
 			<dict>
+				<key>Comment</key>
+				<string>Patch HD4400/4600 9mb Cursor bytes</string>
 				<key>Find</key>
 				<data>
-				RXh0ZXJuYWw=
+				BgAmCgEDAwMAAAACAAAwAQAAYAA=
 				</data>
 				<key>Name</key>
-				<string>AppleAHCIPort</string>
+				<string>AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
 				<data>
-				SW50ZXJuYWw=
+				BgAmCgEDAwMAAAACAAAwAQAAkAA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Fix Glitch El Capitan</string>
+				<key>Find</key>
+				<data>
+				AQAAdRc=
+				</data>
+				<key>Name</key>
+				<string>IOGraphicsFamily</string>
+				<key>Replace</key>
+				<data>
+				AQAAdBc=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Patch HD4400/4600 DP</string>
+				<key>Find</key>
+				<data>
+				AgQJAAAEAACHAAAA
+				</data>
+				<key>Name</key>
+				<string>AppleIntelFramebufferAzul</string>
+				<key>Replace</key>
+				<data>
+				AwYDAAAEAACHAAAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Disable ECC Memory in MacPro SMBIOS</string>
+				<key>Find</key>
+				<data>
+				cgoATWFjUHJvNCwxAE1hY1BybzUsMQBY
+				</data>
+				<key>Name</key>
+				<string>AppleTyMCEDriver</string>
+				<key>Replace</key>
+				<data>
+				cgoAAAAAAAAAAAAAAAAAAAAAAAAAAABY
 				</data>
 			</dict>
 			<dict>
@@ -179,24 +223,10 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Fix Bluetooth 30 seconds commandWakeup</string>
+				<string>AppleHDA ALC 292 #4</string>
 				<key>Find</key>
 				<data>
-				AAAAD4UHAQAA
-				</data>
-				<key>Name</key>
-				<string>IOBluetoothHostControllerUSBTransport</string>
-				<key>Replace</key>
-				<data>
-				AAAAD4QHAQAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>AppleHDA ALC 292 #3</string>
-				<key>Find</key>
-				<data>
-				hQjsEA==
+				gxnUEQ==
 				</data>
 				<key>Name</key>
 				<string>AppleHDA</string>
@@ -221,20 +251,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Disable ECC Memory in MacPro SMBIOS</string>
-				<key>Find</key>
-				<data>
-				cgoATWFjUHJvNCwxAE1hY1BybzUsMQBY
-				</data>
-				<key>Name</key>
-				<string>AppleTyMCEDriver</string>
-				<key>Replace</key>
-				<data>
-				cgoAAAAAAAAAAAAAAAAAAAAAAAAAAABY
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>AppleHDA ALC 292 #2</string>
 				<key>Find</key>
 				<data>
@@ -249,44 +265,16 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Patch HD4400/4600 DP</string>
+				<string>AppleHDA ALC 292 #3</string>
 				<key>Find</key>
 				<data>
-				AgQJAAAEAACHAAAA
+				hQjsEA==
 				</data>
 				<key>Name</key>
-				<string>AppleIntelFramebufferAzul</string>
+				<string>AppleHDA</string>
 				<key>Replace</key>
 				<data>
-				AwYDAAAEAACHAAAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Fix Glitch El Capitan</string>
-				<key>Find</key>
-				<data>
-				AQAAdRc=
-				</data>
-				<key>Name</key>
-				<string>IOGraphicsFamily</string>
-				<key>Replace</key>
-				<data>
-				AQAAdBc=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Patch HD4400/4600 9mb Cursor bytes</string>
-				<key>Find</key>
-				<data>
-				BgAmCgEDAwMAAAACAAAwAQAAYAA=
-				</data>
-				<key>Name</key>
-				<string>AppleIntelFramebufferAzul</string>
-				<key>Replace</key>
-				<data>
-				BgAmCgEDAwMAAAACAAAwAQAAkAA=
+				AAAAAA==
 				</data>
 			</dict>
 			<dict>
@@ -318,17 +306,29 @@
 				</data>
 			</dict>
 			<dict>
-				<key>Comment</key>
-				<string>AppleHDA ALC 292 #4</string>
 				<key>Find</key>
 				<data>
-				gxnUEQ==
+				RXh0ZXJuYWw=
 				</data>
 				<key>Name</key>
-				<string>AppleHDA</string>
+				<string>AppleAHCIPort</string>
 				<key>Replace</key>
 				<data>
-				AAAAAA==
+				SW50ZXJuYWw=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Still waiting for root 2</string>
+				<key>Find</key>
+				<data>
+				dA5IjT2lkAAA
+				</data>
+				<key>Name</key>
+				<string>IOAHCIBlockStorage</string>
+				<key>Replace</key>
+				<data>
+				v8gAAACQkJCQ
 				</data>
 			</dict>
 		</array>

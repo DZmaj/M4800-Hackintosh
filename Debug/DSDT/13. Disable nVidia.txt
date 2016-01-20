@@ -1,6 +1,8 @@
+# only use for eDP connector with nVidia Card  
+
 into method label _INI parent_label PEGP insert
 begin
-External(\_SB.PCI0.PEGP.GFX0._OFF, MethodObj)
+External(\_SB.PCI0.PEGP.GFX0._OFF, MethodObj)  \n
                 \_SB.PCI0.PEGP.GFX0._OFF()
 // disable nvida
 end;

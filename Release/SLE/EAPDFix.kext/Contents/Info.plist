@@ -47,13 +47,13 @@
 				<key>CodecAddress</key>
 				<integer>0</integer>
 				<key>ExternalMic</key>
-				<integer>24</integer>
+				<integer>11</integer>
 				<key>Headphones</key>
 				<integer>21</integer>
 				<key>HpHasEAPD</key>
 				<true/>
 				<key>InternalMic</key>
-				<integer>25</integer>
+				<integer>11</integer>
 				<key>Speakers</key>
 				<integer>20</integer>
 				<key>SpkHasEAPD</key>
@@ -67,16 +67,18 @@
 			<string>IOKit</string>
 			<key>Preferences</key>
 			<dict>
+				<key>BootFixDelay</key>
+				<integer>60000</integer>
 				<key>FixType</key>
-				<integer>3</integer>
+				<integer>1</integer>
 				<key>HDEFAddress</key>
 				<string>1B</string>
 				<key>JackSenseFix</key>
 				<false/>
-				<key>SendDelay</key>
-				<integer>1000</integer>
 				<key>SkipBootBgCheck</key>
 				<true/>
+				<key>SleepFixDelay</key>
+				<integer>1500</integer>
 				<key>StatusCheckInterval</key>
 				<integer>1500</integer>
 				<key>VerbSendCount</key>

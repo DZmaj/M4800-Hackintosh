@@ -5193,7 +5193,7 @@ DefinitionBlock ("DSDT.aml", "DSDT", 2, "DELL  ", "CBX3   ", 0x00000014)
             }
         }
 
-        Device (EHC1)
+        Device (EH01)
         {
             Name (_ADR, 0x001D0000)  // _ADR: Address
             Name (E1SP, Zero)
@@ -5549,7 +5549,7 @@ DefinitionBlock ("DSDT.aml", "DSDT", 2, "DELL  ", "CBX3   ", 0x00000014)
             }
         }
 
-        Device (EHC2)
+        Device (EH02)
         {
             Name (_ADR, 0x001A0000)  // _ADR: Address
             Name (E2SP, Zero)
@@ -11192,8 +11192,8 @@ DefinitionBlock ("DSDT.aml", "DSDT", 2, "DELL  ", "CBX3   ", 0x00000014)
             {
                 Store (LTRA, LTRS)
                 Store (OBFA, OBFS)
-                External(\_SB.PCI0.PEGP.GFX0._OFF, MethodObj)
-                \_SB.PCI0.PEGP.GFX0._OFF()
+                External(\_SB.PCI0.PEGP.GFX0._OFF, MethodObj)                
+                \_SB.PCI0.PEGP.GFX0._OFF()// disable nvida
             }
 
             Name (LTRV, Package (0x04)
@@ -11573,8 +11573,8 @@ DefinitionBlock ("DSDT.aml", "DSDT", 2, "DELL  ", "CBX3   ", 0x00000014)
             {
                 If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
                 Return (Package()
-                {
-                    "layout-id", Buffer() { 1, 0x00, 0x00, 0x00 },
+                {   "device-id",Buffer (0x04) { 0x0C, 0x0D, 0x00, 0x00 },
+                    "layout-id", Buffer() { 0x01, 0x00, 0x00, 0x00 },
                     "hda-gfx", Buffer() { "onboard-1" },
                 })
             }
@@ -12722,21 +12722,21 @@ Store (Zero, P80D)
             If (LEqual (PWRS, Zero))
             {
                 Store (Zero, \_SB.PCI0.XHC.PMEB)
-                Store (Zero, \_SB.PCI0.EHC1.PMEB)
-                Store (Zero, \_SB.PCI0.EHC2.PMEB)
+                Store (Zero, \_SB.PCI0.EH01.PMEB)
+                Store (Zero, \_SB.PCI0.EH02.PMEB)
                 If (LEqual (\_SB.PCI0.XHC.PMST, One))
                 {
                     Store (One, \_SB.PCI0.XHC.PMST)
                 }
 
-                If (LEqual (\_SB.PCI0.EHC1.PMST, One))
+                If (LEqual (\_SB.PCI0.EH01.PMST, One))
                 {
-                    Store (One, \_SB.PCI0.EHC1.PMST)
+                    Store (One, \_SB.PCI0.EH01.PMST)
                 }
 
-                If (LEqual (\_SB.PCI0.EHC2.PMST, One))
+                If (LEqual (\_SB.PCI0.EH02.PMST, One))
                 {
-                    Store (One, \_SB.PCI0.EHC2.PMST)
+                    Store (One, \_SB.PCI0.EH02.PMST)
                 }
             }
             Else
@@ -12748,9 +12748,9 @@ Store (Zero, P80D)
                     Store (One, PO12)
                     Store (Zero, USBL)
                     Sleep (0x14)
-                    If (LEqual (\_SB.PCI0.EHC2.PMST, One))
+                    If (LEqual (\_SB.PCI0.EH02.PMST, One))
                     {
-                        Store (One, \_SB.PCI0.EHC2.PMST)
+                        Store (One, \_SB.PCI0.EH02.PMST)
                     }
                 }
             }
@@ -17966,8 +17966,8 @@ P8XH (One, 0xAB)
     {
         Method (_L0D, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
-            Notify (\_SB.PCI0.EHC1, 0x02)
-            Notify (\_SB.PCI0.EHC2, 0x02)
+            Notify (\_SB.PCI0.EH01, 0x02)
+            Notify (\_SB.PCI0.EH02, 0x02)
             Notify (\_SB.PCI0.XHC, 0x02)
         }
     }
