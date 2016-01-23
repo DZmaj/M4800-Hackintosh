@@ -17979,7 +17979,7 @@ P8XH (One, 0xAB)
         }
     }
 
-    Scope (_SB.PCI0.EHC1)
+    Scope (_SB.PCI0.EH01)
     {
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
@@ -18010,7 +18010,7 @@ P8XH (One, 0xAB)
         }
     }
 
-    Scope (_SB.PCI0.EHC2)
+    Scope (_SB.PCI0.EH02)
     {
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
