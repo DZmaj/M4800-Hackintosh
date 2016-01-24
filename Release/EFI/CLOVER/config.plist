@@ -12,6 +12,21 @@
 			<false/>
 			<key>Name</key>
 			<string>dsdt.aml</string>
+			<key>Patches</key>
+			<array>
+				<dict>
+					<key>Comment</key>
+					<string>OSI XOSI</string>
+					<key>Find</key>
+					<data>
+					X09TSQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					WE9TSQ==
+					</data>
+				</dict>
+			</array>
 			<key>ReuseFFFF</key>
 			<false/>
 		</dict>
@@ -21,13 +36,11 @@
 				<key>Signature</key>
 				<string>SSDT</string>
 				<key>TableId</key>
-				<string>Cpu0Ist</string>
+				<string>CpuPm</string>
 			</dict>
 			<dict>
 				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>CpuPm</string>
+				<string>MCFG</string>
 			</dict>
 			<dict>
 				<key>Signature</key>
@@ -35,7 +48,9 @@
 			</dict>
 			<dict>
 				<key>Signature</key>
-				<string>MCFG</string>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>Cpu0Ist</string>
 			</dict>
 		</array>
 		<key>SSDT</key>
@@ -49,9 +64,11 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>slide=0 dart=0 nv_disable=1 kext-dev-mode=1 rootless=0</string>
+		<string>slide=0 dart=0 nvda_drv=1 kext-dev-mode=1 rootless=0 -uia_exclude_xhc</string>
 		<key>Debug</key>
 		<false/>
+		<key>DefaultVolume</key>
+		<string>Macintosh HD</string>
 		<key>Legacy</key>
 		<string>PBR</string>
 		<key>Secure</key>
@@ -73,6 +90,8 @@
 			<key>AddClockID</key>
 			<true/>
 			<key>FixOwnership</key>
+			<true/>
+			<key>HighCurrent</key>
 			<true/>
 			<key>Inject</key>
 			<true/>
@@ -98,7 +117,7 @@
 			<key>Legacy</key>
 			<false/>
 			<key>Tool</key>
-			<false/>
+			<true/>
 		</dict>
 		<key>Theme</key>
 		<string>bootcamp</string>
@@ -139,44 +158,68 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>Fix Bluetooth 30 seconds commandWakeup</string>
+				<string>Enable Trim on SSD</string>
 				<key>Find</key>
 				<data>
-				AAAAD4UHAQAA
+				QVBQTEUgU1NE
 				</data>
 				<key>Name</key>
-				<string>IOBluetoothHostControllerUSBTransport</string>
+				<string>IOAHCIBlockStorage</string>
 				<key>Replace</key>
 				<data>
-				AAAAD4QHAQAA
+				AAAAAAAAAAAA
+				</data>
+			</dict>
+			<dict>
+				<key>Find</key>
+				<data>
+				RXh0ZXJuYWw=
+				</data>
+				<key>Name</key>
+				<string>AppleAHCIPort</string>
+				<key>Replace</key>
+				<data>
+				SW50ZXJuYWw=
 				</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Patch HD4400/4600 9mb Cursor bytes</string>
+				<string>Still waiting for root 1</string>
 				<key>Find</key>
 				<data>
-				BgAmCgEDAwMAAAACAAAwAQAAYAA=
+				60wAAOoD
 				</data>
 				<key>Name</key>
-				<string>AppleIntelFramebufferAzul</string>
+				<string>IOAHCIBlockStorage</string>
 				<key>Replace</key>
 				<data>
-				BgAmCgEDAwMAAAACAAAwAQAAkAA=
+				60wAAOgB
+				</data>
+			</dict>
+			<dict>
+				<key>Find</key>
+				<data>
+				g72M/v//EA==
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCIPCI</string>
+				<key>Replace</key>
+				<data>
+				g72M/v//FQ==
 				</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Fix Glitch El Capitan</string>
+				<string>AppleHDA ALC 292 #1</string>
 				<key>Find</key>
 				<data>
-				AQAAdRc=
+				hBnUEQ==
 				</data>
 				<key>Name</key>
-				<string>IOGraphicsFamily</string>
+				<string>AppleHDA</string>
 				<key>Replace</key>
 				<data>
-				AQAAdBc=
+				kgLsEA==
 				</data>
 			</dict>
 			<dict>
@@ -209,20 +252,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Still waiting for root 1</string>
-				<key>Find</key>
-				<data>
-				60wAAOoD
-				</data>
-				<key>Name</key>
-				<string>IOAHCIBlockStorage</string>
-				<key>Replace</key>
-				<data>
-				60wAAOgB
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>AppleHDA ALC 292 #4</string>
 				<key>Find</key>
 				<data>
@@ -237,16 +266,16 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Enable Trim on SSD</string>
+				<string>Patch HD4400/4600 9mb Cursor bytes</string>
 				<key>Find</key>
 				<data>
-				QVBQTEUgU1NE
+				BgAmCgEDAwMAAAACAAAwAQAAYAA=
 				</data>
 				<key>Name</key>
-				<string>IOAHCIBlockStorage</string>
+				<string>AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
 				<data>
-				AAAAAAAAAAAA
+				BgAmCgEDAwMAAAACAAAwAQAAkAA=
 				</data>
 			</dict>
 			<dict>
@@ -265,6 +294,34 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>Patch HD4400/4600 HDMI Freeze</string>
+				<key>Find</key>
+				<data>
+				AQUJAAAEAACHAAAA
+				</data>
+				<key>Name</key>
+				<string>AppleIntelFramebufferAzul</string>
+				<key>Replace</key>
+				<data>
+				AQUSAAAIAACHAAAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Fix Glitch El Capitan</string>
+				<key>Find</key>
+				<data>
+				AQAAdRc=
+				</data>
+				<key>Name</key>
+				<string>IOGraphicsFamily</string>
+				<key>Replace</key>
+				<data>
+				AQAAdBc=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>AppleHDA ALC 292 #3</string>
 				<key>Find</key>
 				<data>
@@ -279,56 +336,16 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>AppleHDA ALC 292 #1</string>
+				<string>Fix Bluetooth 30 seconds commandWakeup</string>
 				<key>Find</key>
 				<data>
-				hBnUEQ==
+				AAAAD4UHAQAA
 				</data>
 				<key>Name</key>
-				<string>AppleHDA</string>
+				<string>IOBluetoothHostControllerUSBTransport</string>
 				<key>Replace</key>
 				<data>
-				kgLsEA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Patch HD4400/4600 HDMI Freeze</string>
-				<key>Find</key>
-				<data>
-				AQUJAAAEAACHAAAA
-				</data>
-				<key>Name</key>
-				<string>AppleIntelFramebufferAzul</string>
-				<key>Replace</key>
-				<data>
-				AQUSAAAIAACHAAAA
-				</data>
-			</dict>
-			<dict>
-				<key>Find</key>
-				<data>
-				RXh0ZXJuYWw=
-				</data>
-				<key>Name</key>
-				<string>AppleAHCIPort</string>
-				<key>Replace</key>
-				<data>
-				SW50ZXJuYWw=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Still waiting for root 2</string>
-				<key>Find</key>
-				<data>
-				dA5IjT2lkAAA
-				</data>
-				<key>Name</key>
-				<string>IOAHCIBlockStorage</string>
-				<key>Replace</key>
-				<data>
-				v8gAAACQkJCQ
+				AAAAD4QHAQAA
 				</data>
 			</dict>
 		</array>
@@ -354,6 +371,8 @@
 		<string>Apple Inc.</string>
 		<key>BoardType</key>
 		<integer>10</integer>
+		<key>BoardVersion</key>
+		<string>MacBookPro11,2</string>
 		<key>ChassisAssetTag</key>
 		<string>MacBook-Aluminum</string>
 		<key>ChassisManufacturer</key>
