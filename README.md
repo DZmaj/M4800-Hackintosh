@@ -48,4 +48,4 @@ ____________
 origin Vietnamese thread http://osx.vn/threads/guide-dell-precision-m4800-macbook-co-suc-manh-workstaion.2926/
 @DuongTH
 E-mail: HungDuongWP@gmail.com
-Facebook: https://www.facebook.com/de.z.mai.tinh
+Facebook: https://www.facebook.com/DuongOSX
