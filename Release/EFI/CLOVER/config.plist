@@ -151,7 +151,7 @@
 		<key>KernelHaswellE</key>
 		<false/>
 		<key>KernelLapic</key>
-		<false/>
+		<true/>
 		<key>KernelPm</key>
 		<true/>
 		<key>KextsToPatch</key>
@@ -171,32 +171,8 @@
 				</data>
 			</dict>
 			<dict>
-				<key>Find</key>
-				<data>
-				RXh0ZXJuYWw=
-				</data>
-				<key>Name</key>
-				<string>AppleAHCIPort</string>
-				<key>Replace</key>
-				<data>
-				SW50ZXJuYWw=
-				</data>
-			</dict>
-			<dict>
 				<key>Comment</key>
-				<string>Still waiting for root 1</string>
-				<key>Find</key>
-				<data>
-				60wAAOoD
-				</data>
-				<key>Name</key>
-				<string>IOAHCIBlockStorage</string>
-				<key>Replace</key>
-				<data>
-				60wAAOgB
-				</data>
-			</dict>
-			<dict>
+				<string>Extend USB Ports</string>
 				<key>Find</key>
 				<data>
 				g72M/v//EA==
@@ -220,34 +196,6 @@
 				<key>Replace</key>
 				<data>
 				kgLsEA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Patch HD4400/4600 DP</string>
-				<key>Find</key>
-				<data>
-				AgQJAAAEAACHAAAA
-				</data>
-				<key>Name</key>
-				<string>AppleIntelFramebufferAzul</string>
-				<key>Replace</key>
-				<data>
-				AwYDAAAEAACHAAAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Disable ECC Memory in MacPro SMBIOS</string>
-				<key>Find</key>
-				<data>
-				cgoATWFjUHJvNCwxAE1hY1BybzUsMQBY
-				</data>
-				<key>Name</key>
-				<string>AppleTyMCEDriver</string>
-				<key>Replace</key>
-				<data>
-				cgoAAAAAAAAAAAAAAAAAAAAAAAAAAABY
 				</data>
 			</dict>
 			<dict>
@@ -290,20 +238,6 @@
 				<key>Replace</key>
 				<data>
 				AAAAAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Patch HD4400/4600 HDMI Freeze</string>
-				<key>Find</key>
-				<data>
-				AQUJAAAEAACHAAAA
-				</data>
-				<key>Name</key>
-				<string>AppleIntelFramebufferAzul</string>
-				<key>Replace</key>
-				<data>
-				AQUSAAAIAACHAAAA
 				</data>
 			</dict>
 			<dict>
@@ -359,40 +293,14 @@
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
-		<key>BiosReleaseDate</key>
-		<string>10/18/13</string>
-		<key>BiosVendor</key>
-		<string>Apple Inc.</string>
-		<key>BiosVersion</key>
-		<string>MBP112.88Z.0138.B02.1310181745</string>
 		<key>Board-ID</key>
 		<string>Mac-3CBD00234E554E41</string>
-		<key>BoardManufacturer</key>
-		<string>Apple Inc.</string>
-		<key>BoardType</key>
-		<integer>10</integer>
-		<key>BoardVersion</key>
-		<string>MacBookPro11,2</string>
-		<key>ChassisAssetTag</key>
-		<string>MacBook-Aluminum</string>
-		<key>ChassisManufacturer</key>
-		<string>Apple Inc.</string>
-		<key>ChassisType</key>
-		<string>08</string>
-		<key>Family</key>
-		<string>MacBook Pro</string>
-		<key>Manufacturer</key>
-		<string>Apple Inc.</string>
 		<key>Mobile</key>
 		<true/>
 		<key>ProductName</key>
 		<string>MacBookPro11,2</string>
-		<key>SerialNumber</key>
-		<string>C02LV67QFD56</string>
 		<key>Trust</key>
-		<false/>
-		<key>Version</key>
-		<string>1.0</string>
+		<true/>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
