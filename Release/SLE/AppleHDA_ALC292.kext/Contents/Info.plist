@@ -124,24 +124,28 @@
 		<string>1.7.2a1</string>
 		<key>com.apple.driver.DspFuncLib</key>
 		<string>1.5.2a1</string>
+		<key>com.apple.iokit.IOACPIFamily</key>
+		<string>1.2.0a1</string>
 		<key>com.apple.iokit.IOAudioFamily</key>
-		<string>1.8.6fc11</string>
+		<string>200.5</string>
 		<key>com.apple.iokit.IOGraphicsFamily</key>
 		<string>2.0</string>
 		<key>com.apple.iokit.IOHDAFamily</key>
-		<string>1.0.0d1</string>
+		<string>265.88</string>
 		<key>com.apple.iokit.IONDRVSupport</key>
 		<string>2.0</string>
+		<key>com.apple.iokit.IOPCIFamily</key>
+		<string>1.1</string>
 		<key>com.apple.kpi.bsd</key>
-		<string>8.0.0b3</string>
+		<string>8.0.0</string>
 		<key>com.apple.kpi.iokit</key>
-		<string>8.0.0b3</string>
+		<string>8.0.0</string>
 		<key>com.apple.kpi.libkern</key>
-		<string>8.0.0b3</string>
+		<string>8.0.0</string>
 		<key>com.apple.kpi.mach</key>
-		<string>8.0.0b3</string>
+		<string>8.0.0</string>
 		<key>com.apple.kpi.private</key>
-		<string>8.0.0b3</string>
+		<string>8.0.0</string>
 	</dict>
 </dict>
 </plist>
