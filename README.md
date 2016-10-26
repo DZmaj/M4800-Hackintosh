@@ -44,6 +44,7 @@ why dark ?
 because my internal connector is eDP port.
 i don't know why eDP work on Intel HD4600 but not work fine on K1100M
 
+*never support for Tonymacx86/unibeast/multibeast/hackintoshzone/niresh
 ____________
 origin Vietnamese thread http://osx.vn/threads/guide-dell-precision-m4800-macbook-co-suc-manh-workstaion.2926/
 @DuongTH
